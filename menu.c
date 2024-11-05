@@ -1,69 +1,76 @@
 #include<stdio.h>
 #include<stdlib.h>
-//menu primeira ver
+#include <locale.h>
+//	Protótipos
+void telaSemiCheia();
 void menu();
-void menu(){
-int opcao = 0;
-//menu primeira ver
-//impresao do bagulho da pra deixar mais bonito dps, mas tem q ver como as outras pessoas fizeram no exemplo,
-//medo de achar que a gente kibar o bagulho dos cara sem querer
-printf("esse é o prototipo de um menu pra taverna, probido dar o cuzinho em hora de trabalho\n\n\n");
-
-printf("|****************************************|\n");
-printf("|*                                      *|\n");
-printf("|*         ISSO E UM MENU MAL FEITO     *|\n");
-printf("|*                                      *|\n");
-printf("|****************************************|\n");
-printf("|*        [1]cadastrar novo cliente     *|\n");
-printf("|*        [2]listar clientes            *|\n");
-printf("|*        [3]consultar cliente por cpf  *|\n");
-printf("|*        [4]desativar cliente          *|\n");
-printf("|*        [5]excluir cliente            *|\n");
-printf("|*        [6]vender                     *|\n");
-printf("|*        [7]assistente                 *|\n");
-printf("|*        [8]sair                       *|\n");
-printf("|****************************************|\n");
-printf("|*          selecione um opc            *|\n");
-printf("|****************************************|\n");
-scanf("%d", &opcao);
-
-
-switch (opcao){
-case 1:
-//func do bagulho cadastrar()
-break;
-case 2:
-//func do bagulho clientes()
-break;
-case 3:
-//func do bagulho desativar()
-break;
-case 4:
-//func do bagulho excluir()
-break;
-case 5:
-//func do bagulho vender()
-break;
-case 6:
-//func do bagulho assistente()
-break;
-case 7:
-printf("change da world, my final message, goodbye... ");
-exit(69);
-//func do bagulho sair
-break;
-case 8:
-//func do bagulho esquecidebotarodecpflaemcimamasvailaemcima();
-break;
-
+//	Funçãozinha p abrir em tela semi cheia
+void telaSemiCheia(){
+    #ifdef _WIN32
+        system("mode con cols=200 lines=48");  // Define tamanho no Windows
+    #elif __linux__
+        printf("\e[8;40;150t");  // Define tamanho no Linux (funciona em alguns terminais)
+    #endif
 }
-
-
-//fazer chamada recursiva do meno depois de sair de qualquer opcao mais tarde eu achp
-// da pra trocar a fita de vc escolher seu funcionario por tipo uma assistente virtual pro dating sim
+//	Menu
+void menu(){
+	int opcao = 0;
+	//	Letreiro grandão
+	printf("                                          ______  ___  __ __  ____ ____  __  __  ___       ___  ____    ___   ______ ______   ___  \n"); 
+    printf("                                          | || | // \\\\ || || ||    || \\\\ ||\\ || // \\\\     // \\\\ || \\\\  // \\\\  | || | | || |  // \\\\ \n");
+    printf("                                            ||   ||=|| \\\\ // ||==  ||_// ||\\\\|| ||=||    (( ___ ||_// ((   ))   ||     ||   ((   ))\n");
+    printf("                                            ||   || ||  \\V/  ||___ || \\\\ || \\|| || ||     \\\\_|| || \\\\  \\\\_//    ||     ||    \\\\_// \n");
+    printf("                                                                                                                                   \n");
+	//	Tem que arrumar isso aq ainda
+	printf("|****************************************|\n");
+	printf("|*        [1]cadastrar novo cliente     *|\n");
+	printf("|*        [2]listar clientes            *|\n");
+	printf("|*        [3]consultar cliente por cpf  *|\n");
+	printf("|*        [4]desativar cliente          *|\n");
+	printf("|*        [5]excluir cliente            *|\n");
+	printf("|*        [6]vender                     *|\n");
+	printf("|*        [7]assistente                 *|\n");
+	printf("|*        [8]sair                       *|\n");
+	printf("|****************************************|\n");
+	printf("|*          selecione um opc            *|\n");
+	printf("|****************************************|\n");
+	scanf("%d", &opcao);
+	
+	
+	switch (opcao){
+	case 1:
+	//	cadastrar();
+	break;
+	case 2:
+	//	clientes();
+	break;
+	case 3:
+	//	consultar();
+	break;
+	case 4:
+	//	desativar();
+	break;
+	case 5:
+	//	excluir();
+	break;
+	case 6:
+	//	vender();
+	break;
+	case 7:
+	//	assistente();
+	printf("change da world, my final message, goodbye... ");
+	exit(69);
+	break;
+	case 8:
+	//	sair();
+	break;
+	
+	}
 }
 
 int main(){
-menu();
-return 69;
-}
+	setlocale(LC_ALL, "Portuguese_Brazil");
+	telaSemiCheia();
+	menu();
+	return 0;
+}  
