@@ -4,7 +4,7 @@
 #include <locale.h>
 
 int main(){
-	setlocale(LC_ALL, "portuguese");
+	setlocale(LC_ALL, "Portuguese_Brazil");
 	
 	char cpf[12]; //Aumentando o tamanho para incluir o caractere nulo por conta do fgets
 	int primeiro_digV, segundo_digV;
