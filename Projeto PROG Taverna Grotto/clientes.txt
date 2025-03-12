@@ -1,0 +1,3 @@
+	Ativo: Nao
+Pedidos Feitos: Picanha do Minotauro e Hidromel da Taverna	Valor Gasto: 16,0 Dracmas
+Quarto Escolhido: Feiticeira Arcana	ID: 2	Valor Total: 50,0 Dracmas
